@@ -1,0 +1,14 @@
+입양 시각 구하기(2)
+
+WITH RECURSIVE
+            B AS 
+              ( SELECT 0 AS HOUR
+                UNION ALL
+                SELECT HOUR + 1
+                FROM B
+                WHERE HOUR < 23 )
+SELECT      B.HOUR, COUNT(A.ANIMAL_ID) AS COUNT
+FROM        B
+LEFT JOIN   ANIMAL_OUTS A
+ON          B.hour = HOUR(A.DATETIME)
+GROUP BY    B.hour
