@@ -1,0 +1,17 @@
+없어진 기록 찾기
+
+SELECT B.ANIMAL_ID, B.NAME
+FROM ANIMAL_OUTS B
+LEFT  JOIN ANIMAL_INS A
+ON B.ANIMAL_ID = A.ANIMAL_ID
+WHERE A.ANIMAL_ID is NULL
+ORDER BY B.ANIMAL_ID
+
+
+select animal_id, name
+from animal_outs
+
+minus
+
+select animal_id, name
+from animal_ins
