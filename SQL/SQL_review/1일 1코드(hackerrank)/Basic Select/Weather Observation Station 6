@@ -1,7 +1,17 @@
 SELECT DISTINCT CITY
 FROM STATION
 WHERE (CITY like 'A%'
-or CITY like 'E%'
-or CITY like 'I%'
-or CITY like 'O%'
-or CITY like 'U%');
+     or CITY like 'E%'
+     or CITY like 'I%'
+     or CITY like 'O%'
+     or CITY like 'U%');
+
+또는 
+
+SELECT CITY
+FROM STATION
+WHERE (SUBSTR(CITY,1,1) =  'A' or
+       SUBSTR(CITY,1,1) = 'E' or
+       SUBSTR(CITY,1,1) = 'I' or
+       SUBSTR(CITY,1,1) = 'O' or
+       SUBSTR(CITY,1,1) = 'U' );
